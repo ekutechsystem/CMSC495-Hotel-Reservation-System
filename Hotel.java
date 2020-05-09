@@ -10,8 +10,10 @@ public class Hotel {
 	static String hotelName, cusName, lName, fName, rPrefered;
 	static int ID, rate, rDate, rDuration, rID, cID, cDate, op;
 	static Database db = new Database();
-	
+	private static LoginFrame logFrame = new LoginFrame();
+
 	public static void main(String[] args) {
+		String confirm = "";
 		if ( args.length == 0 ) {
 			 System.out.println("Usage: java A1 <input file>");
 			 System.exit(0);
@@ -22,10 +24,14 @@ public class Hotel {
 			processFile(args[1]);
 			System.out.println("\n************* Customer's list in database ***************\n");
 			db.cusPrint();
+			confirm = confirm + db.cusPrint2();
 			//db.resPrint();
 		}
-		System.out.println("Program ended successfully.");		
+		System.out.println("Program ended successfully.");
+		confirm = confirm + " \nProgram ended successfully.";
+		logFrame.print(confirm);
 	}
+
 	
 	public static void processFile(String arg) {
 		Customers cus = null;

@@ -95,6 +95,9 @@ public class Database {
 	public void cusPrint() {
 		customerList.print();
 	}
+	public String cusPrint2(){
+		return customerList.print2();
+	}
 	
 	//public void resPrint() {
 		//List list = getList();

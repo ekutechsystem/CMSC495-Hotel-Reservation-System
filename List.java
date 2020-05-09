@@ -137,6 +137,7 @@ class List {
     	List rList = ((Hotels)obj).rList();
     	rList.print();
     }
+
   
 //   else if curr is an instance if Customers
   else if(curr.getData() instanceof Customers){
@@ -148,6 +149,40 @@ class List {
    curr=curr.getNext();//updates curr to next node
   }
  
+ }
+
+ public String print2(){
+     String printing = "";
+     Node curr = top;//sets curr to top
+
+     //loop goes till curr is not null
+     while(curr != null){
+         //checks if curr is an instance of Moies
+         if(curr.getData() instanceof Hotels){
+             //prints the current node
+             printing = printing + "\n" + curr;
+             printing = printing + "\n";
+         }
+         if( curr.getData() instanceof Hotels ) {
+             Object obj = curr.getData();
+//
+             List rList = ((Hotels)obj).rList();
+             rList.print();
+         }
+
+
+//   else if curr is an instance if Customers
+         else if(curr.getData() instanceof Customers){
+             printing = printing + curr;
+             printing = printing + "\n";
+         } else {
+             printing = printing + curr;
+             printing = printing + "\n";
+         }
+
+         curr=curr.getNext();//updates curr to next node
+     }
+     return printing;
  }
  
 }

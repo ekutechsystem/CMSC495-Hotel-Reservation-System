@@ -69,12 +69,12 @@
               <text value="Type of Action"/>
             </properties>
           </component>
-          <component id="a99c4" class="javax.swing.JRadioButton" binding="cancelingRadioButton" default-binding="true">
+          <component id="a99c4" class="javax.swing.JRadioButton" binding="checkOutRadioButton" default-binding="true">
             <constraints>
               <grid row="4" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
-              <text value="Canceling"/>
+              <text value="Check Out"/>
             </properties>
           </component>
           <component id="a5cd0" class="javax.swing.JRadioButton" binding="reservingRadioButton" default-binding="true">

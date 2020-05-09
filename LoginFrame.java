@@ -13,6 +13,7 @@ public class LoginFrame extends JFrame implements ActionListener{
     JButton loginButton=new JButton("LOGIN");
     JButton resetButton=new JButton("RESET");
     JCheckBox showPassword=new JCheckBox("Show Password");
+    static String[] arg;
 
     //Creating constructor of LoginFrame() class
     LoginFrame()
@@ -24,6 +25,11 @@ public class LoginFrame extends JFrame implements ActionListener{
         addComponentsToContainer();
         addActionEvent();//calling addActionEvent() method
     }
+    public void print(String confirm){
+        JOptionPane.showMessageDialog(this, confirm);
+
+    }
+
     public void setLayoutManager()
     {
         //Setting layout manager of Container to null
@@ -70,8 +76,12 @@ public class LoginFrame extends JFrame implements ActionListener{
             String pwdText;
             userText = userTextField.getText();
             pwdText = passwordField.getText();
-            if (userText.equalsIgnoreCase("mehtab") && pwdText.equalsIgnoreCase("12345")) {
+
+            //login username and password admin and admin123
+            if (userText.equalsIgnoreCase("admin") && pwdText.equalsIgnoreCase("admin123")) {
                 JOptionPane.showMessageDialog(this, "Login Successful");
+                Reserve.main(arg);
+
             } else {
                 JOptionPane.showMessageDialog(this, "Invalid Username or Password");
             }
@@ -93,6 +103,16 @@ public class LoginFrame extends JFrame implements ActionListener{
 
         }
 
+    }
+
+    public static void main(String[] args) {
+        LoginFrame login = new LoginFrame();
+        login.setTitle("Hotel Reservation Login");
+        login.setVisible(true);
+        login.setBounds(10, 10, 370, 600);
+        login.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        login.setResizable(false);
+        arg = args;
     }
 
 
